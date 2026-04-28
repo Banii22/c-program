@@ -54,13 +54,43 @@
             for(int i=0; i<count; i++)
             {
                printf("amount: 2f", e[i].amount);
+
+               if(e[i].category==1){
+                  printf("Food\n");
+               }
+               else if(e[i].category==2){
+                  printf("Transportation\n");
+               }
+               else if(e[i].category==3){
+                  printf("Savings\n");
+               }
+               else if(e[i].category==4){
+                  printf("Entertainment\n");
+               }
+               else if(e[i].category==5){
+                  printf("Education\n");
+               }
+               else {
+                  printf("Miscellaneous\n");
+               }
+
+               total+= e[i].amount;
             }
+
+            printf("Your total expence is: % 2f\n", total);
+         }
+
+         else if(choice==3){
+            printf("Existing program\n");
+            break;
+         }
+
+         else {
+            printf("Invalid choice\n");
          }
       }
-
-
-
-   }
+      return 0;
+ }
 
 
 

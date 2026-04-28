@@ -3,7 +3,7 @@
 
    struct Expences
    {
-    char category[30];
+    int category;
     char description[50];
     float amount;
    };
@@ -14,6 +14,7 @@
       int count=0;
       int choice;
       int i, j=0;
+      int valid=0;
 
       printf("Welcome to my Expense Tracker.");
 
@@ -39,12 +40,17 @@
             printf("3. Savings\n");
             printf("4. Entertainment\n");
             printf("5. Education\n");
-            printf("5. MIscellaneous\n");
+            printf("6. Miscellaneous\n");
 
             scanf("%d", & e[j].category);
-
-            j++;
             
+            if(e[j].category>=1 && e[j].category<=6 )
+            {
+               valid= 1;
+            }
+            else{
+               printf("Invalid");
+            }
          }
          else if(choice==2)
          {
@@ -53,34 +59,36 @@
 
             for(int i=0; i<count; i++)
             {
-               printf("amount: 2f", e[i].amount);
+               printf("amount: % 2f || category", e[i].amount);
 
                if(e[i].category==1){
                   printf("Food\n");
                }
-               else if(e[i].category==2){
+               else if(e[i].category== 2){
                   printf("Transportation\n");
                }
-               else if(e[i].category==3){
+               else if(e[i].category== 3 ){
                   printf("Savings\n");
                }
-               else if(e[i].category==4){
+               else if(e[i].category== 4){
                   printf("Entertainment\n");
                }
-               else if(e[i].category==5){
+               else if(e[i].category== 5){
                   printf("Education\n");
                }
                else {
                   printf("Miscellaneous\n");
                }
-
-               total+= e[i].amount;
             }
-
+         else if(choice==3) {
+            float total=0;
+            for(i=0; i< count; i++){
             printf("Your total expence is: % 2f\n", total);
+            }
+            count++; 
          }
 
-         else if(choice==3){
+         else if(choice==4){
             printf("Existing program\n");
             break;
          }

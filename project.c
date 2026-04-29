@@ -4,7 +4,6 @@
    struct Expences
    {
     int category;
-    char description[50];
     float amount;
    };
 
@@ -43,6 +42,8 @@
             printf("6. Miscellaneous\n");
 
             scanf("%d", & e[j].category);
+            count++;
+            j++;
             
             if(e[j].category>=1 && e[j].category<=6 )
             {
@@ -55,11 +56,12 @@
          else if(choice==2)
          {
             float total=0;
+
             printf("Expenses\n");
 
             for(int i=0; i<count; i++)
             {
-               printf("amount: % 2f || category", e[i].amount);
+               printf("amount: %.2f || category: ", e[i].amount);
 
                if(e[i].category==1){
                   printf("Food\n");
@@ -80,16 +82,17 @@
                   printf("Miscellaneous\n");
                }
             }
+         }
          else if(choice==3) {
             float total=0;
             for(i=0; i< count; i++){
-            printf("Your total expence is: % 2f\n", total);
+            total+= e[i].amount;
             }
-            count++; 
+            printf("Your total expence is: %.2f\n", total); 
          }
 
          else if(choice==4){
-            printf("Existing program\n");
+            printf("Exiting program\n");
             break;
          }
 

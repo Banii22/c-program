@@ -45,13 +45,7 @@
             count++;
             j++;
             
-            if(e[j].category>=1 && e[j].category<=6 )
-            {
-               valid= 1;
-            }
-            else{
-               printf("Invalid");
-            }
+            
          }
          else if(choice==2)
          {
@@ -64,22 +58,22 @@
                printf("amount: %.2f || category: ", e[i].amount);
 
                if(e[i].category==1){
-                  printf("Food\n");
+                  printf("\nFood\n");
                }
                else if(e[i].category== 2){
-                  printf("Transportation\n");
+                  printf("\nTransportation\n");
                }
                else if(e[i].category== 3 ){
-                  printf("Savings\n");
+                  printf("\nSavings\n");
                }
                else if(e[i].category== 4){
-                  printf("Entertainment\n");
+                  printf("\nEntertainment\n");
                }
                else if(e[i].category== 5){
-                  printf("Education\n");
+                  printf("\nEducation\n");
                }
                else {
-                  printf("Miscellaneous\n");
+                  printf("\nMiscellaneous\n");
                }
             }
          }
@@ -88,21 +82,19 @@
             for(i=0; i< count; i++){
             total+= e[i].amount;
             }
-            printf("Your total expence is: %.2f\n", total); 
+            printf("\nYour total expence is: %.2f\n", total); 
          }
 
          else if(choice==4){
-            printf("Exiting program\n");
+            printf("\nExiting program\n");
             break;
          }
 
          else {
-            printf("Invalid choice\n");
+            printf("\nInvalid choice\n");
          }
       }
       return 0;
  }
-
-
 
    
